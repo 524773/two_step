@@ -6,8 +6,8 @@ async function saveToGitHub(filePath, content) {
 
   try {
     const response = await octokit.repos.createOrUpdateFileContents({
-      owner: 'YOUR_GITHUB_USERNAME',
-      repo: 'YOUR_REPOSITORY_NAME',
+      owner: '524773',
+      repo: 'two_step',
       path: filePath,
       message: `保存: ${filePath}`,
       content: Buffer.from(content).toString('base64'),

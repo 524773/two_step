@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "tasks/two-step/experiment.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "tasks/two-step/js/**/*",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/tasks/two-step/experiment.html"
+    }
+  ]
+}

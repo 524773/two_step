@@ -1,8 +1,19 @@
-_site
-.sass-cache
-Gemfile.lock
-*.gem
-.jekyll-cache
-.DS_Store
+# Node.js / NPMの関連ファイル
+node_modules/
 
-.vercel
+# ビルド結果
+/dist/
+/build/
+/public/assets/css/style.css # Sassコンパイル結果など
+
+# Vercelの設定ファイル
+.vercel/
+
+# 環境変数ファイル（APIキーなど）
+.env
+
+# 一時ファイル
+*.log
+*.tmp
+
+

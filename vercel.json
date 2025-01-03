@@ -4,6 +4,10 @@
     {
       "src": "public/**/*",
       "use": "@vercel/static"
+    },
+    {
+      "src": "tasks/two-step/**/*",
+      "use": "@vercel/static"
     }
   ],
   "routes": [

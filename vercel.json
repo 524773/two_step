@@ -2,18 +2,26 @@
   "version": 2,
   "builds": [
     {
-      "src": "tasks/two-step/experiment.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "tasks/two-step/js/**/*",
+      "src": "public/**/*",
       "use": "@vercel/static"
     }
   ],
   "routes": [
     {
-      "src": "/(.*)",
+      "src": "/tasks/two-step/experiment.html",
       "dest": "/tasks/two-step/experiment.html"
+    },
+    {
+      "src": "/tasks/two-step/js/(.*)",
+      "dest": "/tasks/two-step/js/$1"
+    },
+    {
+      "src": "/assets/(.*)",
+      "dest": "/assets/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/public/$1"
     }
   ]
 }

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Two-Step Task</title>
+
+  <!-- Load libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/2.4.3/seedrandom.min.js"></script>
+  <script src="https://unpkg.com/jspsych@7.3.3"></script>
+
+  <!-- Initialize jsPsych -->
+  <script src="./js/init-jspsych.js"></script>
+
+  <!-- Load jsPsych plug-ins -->
+  <script src="./js/plugin-two-step-alien-practice.js"></script>
+  <script src="./js/plugin-two-step-trial.js"></script>
+  <script src="./js/plugin-two-step-instructions.js"></script>
+  <script src="./js/plugin-two-step-comprehension.js"></script>
+  <script src="https://unpkg.com/@jspsych/plugin-preload@1.1.2"></script>
+  <script src="https://unpkg.com/@jspsych/plugin-fullscreen@1.1.2"></script>
+  <script src="https://unpkg.com/@jspsych/plugin-call-function@1.1.2"></script>
+  <script src="https://unpkg.com/@jspsych/plugin-html-keyboard-response@1.1.2"></script>
+
+  <!-- Load experiment -->
+  <script src="./js/two-step-experiment.js" type="text/javascript"></script>
+  <script src="./js/two-step-instructions.js" type="text/javascript"></script>
+
+  <!-- Load CSS styles -->
+  <link href="https://unpkg.com/jspsych@7.3.3/css/jspsych.css" rel="stylesheet" type="text/css" />
+  <link href="./css/two-step-css.min.css" rel="stylesheet" type="text/css"></link>
+
+  <!-- Firebase SDK (Non-module, non-import) -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+  <!-- Firebase Initialization -->
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyCA0zQz0WBXJ4DfiDwBBIEXKdKygwJg_Q8",
+      authDomain: "utokyo-edup.firebaseapp.com",
+      projectId: "utokyo-edup",
+      storageBucket: "utokyo-edup.firebasestorage.app",
+      messagingSenderId: "92702717304",
+      appId: "1:92702717304:web:9e41b501faceff6efb448d",
+      measurementId: "G-M9LRC5KRTZ"
+    };
+
+    const app = firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+    // Function to send experiment results to Firestore
+    async function sendResults(participant_id, results, dob) {
+      try {
+        const docRef = await db.collection("results").add({
+          participant_id: participant_id,
+          results: results,
+          dob: dob,
+          timestamp: new Date()  // Timestamp when the result was submitted
+        });
+        console.log("Data successfully saved to Firestore, Document ID: ", docRef.id);
+      } catch (error) {
+        console.error("Error saving data to Firestore:", error);
+        throw error; // Re-throw the error to ensure promise rejection
+      }
+    }
+  </script>
+
+</head>
+<body>
+
+  <h1>実験の開始</h1>
+
+  <script>
+    // Define image preloading.
+    var PRELOAD = {
+      type: jsPsychPreload,
+      images: preload_images,
+      message: 'Loading images. This may take a moment depending on your internet connection.',
+      error_message: '<p>The experiment failed to load. Please try restarting your browser.</p><p>If this error persists after 2-3 tries, please contact the experimenter.</p>',
+      continue_after_error: false,
+      show_progress_bar: true,
+      max_load_time: 30000
+    };
+
+    // Define fullscreen for experiment
+    var FULLSCREEN = {
+      type: jsPsychFullscreen,
+      fullscreen_mode: true
+    };
+
+    window.flowType = Math.random() < 0.5 ? 'flow_1' : 'flow_2';  // Randomly assign flow_1 or flow_2
+
+    // Set seed for randomization
+    Math.seedrandom('trial_seed_123');
+
+    // Initialize timeline
+    var timeline = [];
+    timeline = timeline.concat(PRELOAD);
+    timeline = timeline.concat(FULLSCREEN);
+    timeline = timeline.concat(INSTRUCTIONS_SKIP);
+    timeline = timeline.concat(INSTRUCTIONS);
+    timeline = timeline.concat(READY_0);
+
+    // Set timeline based on flow type
+    if (flowType === 'flow_1') {
+      timeline = timeline.concat(READY_01);
+      timeline = timeline.concat(TWO_STEP_TASK.slice(0, 79));
+      timeline = timeline.concat(READY_02);
+      timeline = timeline.concat(TWO_STEP_TASK.slice(0, 79));
+    } else {
+      timeline = timeline.concat(READY_02);
+      timeline = timeline.concat(TWO_STEP_TASK.slice(0, 79));
+      timeline = timeline.concat(READY_01);
+      timeline = timeline.concat(TWO_STEP_TASK.slice(0, 79));
+    }
+
+    // Add the step to send the results and move to the survey at the end
+    timeline.push({
+      type: jsPsychCallFunction,
+      func: function() {
+        // 実験終了時にフラグをtrueに設定
+        experimentFinished = true;
+
+        // 実験結果をjsPsychから取得
+        const results = jsPsych.data.get().json();  // jsPsychのデータをJSON形式で取得
+
+        // 結果をFirebaseに送信
+        sendResults(participant_id, results, dob);
+
+        // 結果送信後にアンケートページに遷移
+        setTimeout(function() {
+          window.location.href = "../hanten/survey.html";
+        }, 1000); // 1秒の待機
+      }
+    });
+
+    timeline = timeline.concat(FINISHED);
+
+    // Flag to check if experiment is finished
+    let experimentFinished = false;
+
+    // Function to get dob and send results
+    (async function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const dob = urlParams.get('dob'); // Date of birth (dob) parameter from URL
+
+      // dobがない場合、エラーメッセージを表示
+      if (!dob) {
+        console.error('Date of birth (dob) not provided');
+        return; // dobがなければ処理を終了
+      }
+
+      let participant_id = dob + '_' + Date.now();  // Participant ID
+      localStorage.setItem('participant_id', participant_id);
+
+      console.log('Participant ID:', participant_id);
+
+      // jsPsychの実験を初期化
+      await initJsPsych({
+        display_element: 'jspsych-target',
+        timeline: timeline
+      });
+
+    })();
+  </script>
+
+</body>
+</html>
+
+
+

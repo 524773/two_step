@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>オンラインアンケート</title>
+
+  <!-- jsPsychライブラリのCSSをインポート -->
+  <link href="https://cdn.jsdelivr.net/npm/jspsych@6.3.1/dist/css/jspsych.css" rel="stylesheet">
+
+  <!-- jsPsychライブラリのJSをインポート -->
+  <script src="https://cdn.jsdelivr.net/npm/jspsych@6.3.1/dist/jspsych.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspsych@6.3.1/dist/plugins/jspsych-html-button-response.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspsych@6.3.1/dist/plugins/jspsych-html-slider-response.js"></script>
+  
+    <!-- Firebase SDK (Non-module, non-import) -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="survey.css">
+</head>
+<body>
+  <div id="survey-container">
+    <!-- アンケートの内容がここに表示されます -->
+  </div>
+
+  <!-- エラーメッセージを追加（未回答時に表示） -->
+  <p id="error-message" style="color: red; display: none;">未回答の問題があります。</p>
+
+  <!-- 「次へ」ボタンは常に表示 -->
+  <button id="next-button" disabled>次へ</button>
+
+  <!-- JavaScriptファイル -->
+  <script src="survey.js"></script>
+</body>
+</html>

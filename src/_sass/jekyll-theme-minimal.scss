@@ -4,7 +4,7 @@
 body {
   background-color: #fff;
   padding: 50px;
-  font: 22px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 66px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color:#727272;
   font-weight:400;
 }
@@ -23,7 +23,7 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size:30px;
+  font-size:60px;
 }
 
 h2 {
@@ -48,7 +48,7 @@ a:hover, a:focus {
 }
 
 a small {
-  font-size:11px;
+  font-size:33px;
   color:#777;
   margin-top:-0.3em;
   display:block;
@@ -114,7 +114,7 @@ kbd {
   box-shadow: inset 0 -1px 0 #959da5;
   color: #444d56;
   display: inline-block;
-  font-size: 11px;
+  font-size: 33px;
   line-height: 10px;
   padding: 3px 5px;
   vertical-align: middle;
@@ -158,7 +158,7 @@ ul.downloads {
 
 .downloads a {
   line-height:1;
-  font-size:11px;
+  font-size:33px;
   color:#676767;
   display:block;
   text-align:center;
@@ -198,7 +198,7 @@ section {
 }
 
 small {
-  font-size:11px;
+  font-size:33px;
 }
 
 hr {

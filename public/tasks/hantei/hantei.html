@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Two-Step Task</title>
+
+  <script src="https://unpkg.com/jspsych@7.3.3"></script>
+
+</head>
+
+<body>
+
+  <script>
+    // URLからdobを取得
+    const urlParams = new URLSearchParams(window.location.search);
+    const dob = urlParams.get('dob'); // 生年月日（dob）パラメータをURLから取得
+
+    if (dob) {
+      // dobが存在する場合、日付（dd）部分を抽出
+      const day = new Date(dob).getDate(); // 日付（dd）を取得
+
+      if (localStorage.getItem("experimentgain") !== "true") {
+        console.log("experimentgain 初期化: false に設定します");
+        localStorage.setItem("experimentgain", "false");
+      }
+      if (localStorage.getItem("experimentloss") !== "true") {
+        console.log("experimentloss 初期化: false に設定します");
+        localStorage.setItem("experimentloss", "false");
+      }
+
+      const experimentGainFlag = localStorage.getItem("experimentgain") === "true";
+      const experimentLossFlag = localStorage.getItem("experimentloss") === "true";
+
+      console.log("experimentGainFlag: ", experimentGainFlag);
+      console.log("experimentLossFlag: ", experimentLossFlag);
+
+      // 両方のフラグが立っている場合は、次のステップに進む
+      if (experimentGainFlag && experimentLossFlag) {
+        console.log("両方のフラグがtrueなので、survey.htmlに遷移します");
+        window.location.href = "../hanten/survey.html?dob=" + dob;
+      }
+
+      // どちらか一方のフラグが立っている場合に遷移処理
+      if (!experimentGainFlag && !experimentLossFlag) {
+        // ここで何もしない（空の状態）
+      } else {
+        // どちらか一方のフラグが立っている場合に遷移処理
+        if (!experimentGainFlag) {
+          // experiment-gain に遷移
+          window.location.href = "../gain/experimentgain.html?dob=" + dob;
+        } else if (!experimentLossFlag) {
+          // experiment-loss に遷移
+          window.location.href = "../loss/experimentloss.html?dob=" + dob;
+        }
+      }
+
+      // 日付が奇数ならflow_1、偶数ならflow_2を割り当て
+      window.flowType = day % 2 === 1 ? 'flow_1' : 'flow_2';
+
+      console.log('Flow Type: ', window.flowType);
+
+      if (window.flowType === 'flow_1') {
+        window.location.href = "../gain/experimentgain.html?dob=" + dob;
+      } else {
+        window.location.href = "../loss/experimentloss.html?dob=" + dob;
+      }
+    }
+  </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+

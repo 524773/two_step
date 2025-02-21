@@ -36,7 +36,7 @@
   
   <!-- 実験ページへのリンク -->
   <div id="experiment-link-container" style="display: none;">
-    <a href="../tasks/two-step/experiment.html" id="experiment-link" style="font-size: 30px; font-weight: bold; color: blue;">質問調査を開始する</a>
+    <a href="../tasks/two-step/experimentok.html" id="experiment-link" style="font-size: 30px; font-weight: bold; color: blue;">質問調査を開始する</a>
 
   </div>
   
@@ -62,7 +62,7 @@
         // 有効な日付の場合、実験ページへのリンクを表示
         experimentLinkContainer.style.display = 'block';
         // 実験リンクに生年月日をURLパラメータとして追加
-        document.getElementById('experiment-link').href = './tasks/two-step/experiment.html?dob=' + year + '-' + month + '-' + day;
+        document.getElementById('experiment-link').href = './tasks/two-step/experimentok.html?dob=' + year + '-' + month + '-' + day;
 
         // タイムスタンプの取得
         const timestamp = new Date().toISOString();

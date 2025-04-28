@@ -59,7 +59,7 @@
         const resultsloss = jsPsych.data.get().json();  // jsPsychのデータを取得
         const docRef = await db.collection("resultsloss").add({
           participant_id: participant_id,
-          resultsloss: resultsloss,  // 結果を保存するフィールド名として resultsgain を使う
+          resultsloss: resultsloss,
           dob: dob,
           timestamp: new Date()  // 結果の送信時間
         });

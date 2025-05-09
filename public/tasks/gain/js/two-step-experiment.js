@@ -220,7 +220,7 @@ const instructions_04 = {
   type: jsPsychTwoStepInstructions,
   pages: [
     "<p>お疲れ様です！ この星での探索は終了です。</p>
-	<p>あなたが交換した「石」の合計は <strong>${total_hits} 円</strong> でした！</p>
+	<p>あなたが交換した「石」の合計は、プラス <strong>${total_hits} 円</strong> でした！</p>
 	<p>プラスマイナスされた金額は後日、謝礼の際にお伝えします。</p>",
   ]
 }

@@ -24,7 +24,7 @@ const instructions_1a = {
     "<p>このゲームでは、宝物を探して、さまざまな惑星を訪問します。</p>",
     `<p>各惑星には2人の宇宙人がいます。例えば:</p><p><b><font color='${practice_info.font_colors[2]}'>${practice_info.planet_names[0]}</font></b>色の宇宙人がいるのは、惑星<b><font color='${practice_info.font_colors[2]}'>${practice_info.planet_names[0]}</font></b>で、</p><p><b><font color='${practice_info.font_colors[3]}'>${practice_info.planet_names[1]}</font></b>色の宇宙人がいるのは、惑星<b><font color='${practice_info.font_colors[3]}'>${practice_info.planet_names[1]}</font></b>です。</p>`,
     "<p>惑星を訪れると、取引する宇宙人を選べます。</p><p>宇宙人と取引すると、<b>「あたり」の「石」か</b><b>それ以外の「泥だんご」がもらえます。</b></p>",
-    "<p>「石」は報酬の星では「あたり」が「プラス」になり、</p><p>罰則の星では「あたり」が「マイナス」になります。</p><p>「石」はこちらです。</p>",
+    "<p>「石」は報酬の宇宙群では「あたり」が「プラス」になり、</p><p>罰則の宇宙群では「あたり」が「マイナス」になります。</p><p>「石」はこちらです。</p>",
     "<p>「泥だんご」は報酬の星でも罰則の星でも、「プラス」にも「マイナス」にもなりません。</p><p>「泥だんご」はこちらです。</p>",
     "<p>取引する宇宙人を選ぶには、キーボードの</p><p><b>左←か右→の矢印</b>キーを使います。</p>",
     "<p>宇宙人たちは<b>「毎回かならず」</b></p><p>同じように「石」をわたす<b>わけではありません。</b></p><p>同じようにみえて、ときおり「泥だんご」をわたします。</p>",

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>タスク完了画面</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            background-color: #f4f4f9;
+        }
+        .content {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .button-container {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+        }
+        #next-button {
+            padding: 30px 60px;
+            font-size: 46px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 10px;
+        }
+        #next-button:disabled {
+            background-color: #cccccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <p>次の質問ページから、上部に質問文、</p>
+        <p>下部に選択肢が表示されます。</p>
+        <p></p>
+		<p>選択肢の左と右の端は、その選択の気持ちの強さをあらわします。</p>
+        <p>あいまの選択肢は気持ちの程度としてお考えください。</p>
+		<p>つまり、真ん中の選択肢は、中立的な気持ちとしてください。</p>
+    </div>
+
+    <div class="button-container">
+        <button id="next-button" onclick="nextPage()" disabled>次へ</button>
+    </div>
+
+    <script>
+        document.getElementById('next-button').style.display = 'block'; // 常に表示
+        document.getElementById('next-button').disabled = false; // 初期状態では無効
+
+        function nextPage() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const dob = urlParams.get('dob');
+        
+            if (dob) {
+                window.location.href = `../hanten/survey.html?dob=${dob}&g=true&l=true`;
+            } else {
+                alert("dobパラメータがURLに含まれていません。");
+            }
+		}	
+    </script>
+</body>
+</html>

@@ -185,7 +185,7 @@ for (let i=0; i < outcomes.length; i++){
   const trial = {
     type: jsPsychTwoStepTrial,
     transition: transitions[i],
-    outcome:  outcome[i],
+    outcomes:  outcomes[i],
     rocket_colors: task_info.rocket_colors,
     planet_colors: task_info.planet_colors,
     aliens: task_info.aliens,
@@ -196,7 +196,7 @@ for (let i=0; i < outcomes.length; i++){
     data: {
       trial: i+1,
       drifts: drifts[i],
-      outcome: outcome[i] // ★ outcomes を data に追加
+      outcomes: outcomes[i] // ★ outcomes を data に追加
     },
     on_finish: function(data) {
       data.browser_interactions = jsPsych.data.getInteractionData().filter({trial: data.trial_index}).count();

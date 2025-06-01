@@ -161,7 +161,7 @@ const drifts = [
 
 const outcomes = [];
 for (let i=0; i<drifts.length; i++) {
-  outcomes.push( drifts[i].map(p => Math.random() < p ? 1 : 0) );
+  outcomes.push([...drifts[i]]);
 }
 
 //---------------------------------------//

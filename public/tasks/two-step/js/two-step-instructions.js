@@ -510,7 +510,7 @@ const instructions_loop_3a = {
 var INSTRUCTIONS_SKIP = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: '<p>これから、「２段階タスク」ゲームの <b>説明とインストラクションが始まります。</b></p><p>インストラクションを始めるには, キーボードの「１」を押してください。</p>',
-  choices: ["1","8"]
+  choices: ["1","2"]
 }
 
 var INSTRUCTIONS = {

@@ -372,8 +372,8 @@
   bottom: calc(5% + 0.405 * var(--width));
 
   /* rewards size */
-  width: calc(0.75 * var(--width));
-  height: calc(0.75 * var(--width));
+  width: calc(0.7 * var(--width));
+  height: calc(0.7 * var(--width));
 
   /* rewards aesthetics */
   display: none;
@@ -389,13 +389,13 @@
 }
 .diamond[status='chosen'][side='0'], .rock[status='chosen'][side='0'] {
   display: inherit;
-  left: calc(50% - 0.75 * var(--width));
+  left: calc(50% - 0.7 * var(--width));
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
 }
 .diamond[status='chosen'][side='1'], .rock[status='chosen'][side='1'] {
   display: inherit;
-  right: calc(50% - 0.75 * var(--width));
+  right: calc(50% - 0.7 * var(--width));
   -webkit-transform: translateX(50%);
   transform: translateX(50%);
 }

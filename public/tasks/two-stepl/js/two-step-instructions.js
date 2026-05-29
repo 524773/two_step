@@ -124,7 +124,7 @@ const instructions_1b_node = {
   timeline: [{
     type: jsPsychTwoStepInstructions,
     pages: [
-      "<p>お見事です。次は実際に宇宙人と体験しましょう。</p><p>次の画面で<b>左/右の矢印キーを使って</b>取引する宇宙人を選択します。</p><p>どの宇宙人が「あたりの顔」をみせる可能性が高いか試行してください。</p>",
+      "<p>お見事です。実際に宇宙人と取引するには、搭乗ロケットを選択し、到着さきの宇宙人を選択する２段階の選択が必要になりますが、まず先に宇宙人との取引を体験しましょう。</p><p>次の画面で<b>左/右の矢印キーを使って</b>取引する宇宙人を選択します。</p><p>どの宇宙人が「あたりの顔」をみせる可能性が高いか試行してください。</p>",
     　 "<p><b>ヒント:</b>宇宙人はときどき画面にあらわれる<br>左右の位置をかえてきます。左右がかわっても<br>「シビアな取引」をする確率は変わりません。</p>",
       "<p>各選択の場面において、その都度１０秒以内に矢印キーで決定してください。５回以上の時間切れで打ち切られ、最初からになります。</p>",
     ],
@@ -190,7 +190,7 @@ const practice_1_help_node = {
   timeline: [{
     type: jsPsychTwoStepInstructions,
     pages: [
-      "<p>お困りですか。</p><p>覚えておいてください。<b>たいていの場合</b>シビアな取引をする宇宙人を<br><b>覚えるのです。</b></p>",
+      "<p>お困りですか。</p><p>覚えておいてください。<b>たいていの場合に、</b>シビアな取引をする宇宙人を<br><b>覚えるのです。</b></p>",
       "<p>もう一度やってみましょう。</p><p>次の画面で<b>左/右の矢印キーを使って</b>取引する宇宙人を選択します。どの宇宙人がシビアか判断するチャンスが 10 回あります。</p>",
     ],
     show_clickable_nav: true,
@@ -235,8 +235,8 @@ const instructions_loop_1b = {
 const instructions_2a = {
   type: jsPsychTwoStepInstructions,
   pages: [
-    "<p>次に、宇宙人の惑星へのめぐり方を体験します。</p>",
-    `<p>惑星を訪問するには、旅するロケットを選びます。</p><p>以下に、選択できるロケットの例を2つ示します:<br>the <b><font color='${practice_info.font_colors[0]}'>${practice_info.rocket_names[0]}</font></b> and <b><font color='${practice_info.font_colors[1]}'>${practice_info.rocket_names[1]}</font></b> rocket ships.</p>`,
+    "<p>次に、宇宙人の惑星へのめぐり方を体験します。取引全体の前半と後半の２段階の選択のうち、さきほどの宇宙人との取引は後半部分でした。</p>",
+    `<p>ここでは、前半部分の選択である、惑星を訪問するロケットを、まず選ぶ練習です。</p><p>以下に、ロケットの例を2つ示します:<br>the <b><font color='${practice_info.font_colors[0]}'>${practice_info.rocket_names[0]}</font></b> and <b><font color='${practice_info.font_colors[1]}'>${practice_info.rocket_names[1]}</font></b> rocket ships.</p>`,
     `<p>各ロケットは「たいてい」は、到着する惑星がきまっています。</p><p>このロケットならば、あの宇宙人と出会える、と「たいてい」わかっているのです。</p><p></p>`,
     "<p>もし特定の惑星、特定の宇宙人と出会いたいなら, そこへ連れていって<br>くれる可能性が最も高い色のロケット船を選ぶ必要があります。</p>",
     "<p>旅行するロケット船を選択するには、キーボードの</p><p><b>矢印の左←か右→の方向キーを</b>使用します。</p>",

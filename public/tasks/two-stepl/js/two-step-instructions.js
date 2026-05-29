@@ -21,7 +21,7 @@ var n_loops = 0;
 const instructions_1a = {
   type: jsPsychTwoStepInstructions,
   pages: [
-    "<p>このゲームは、宇宙人と資源の取り引きをします。その結果、得をしたり、損をしたりします。ただし、こちらはシビアな宇宙群のため、プラスマイナス０の取引か損失の取引しかできません。</p>",
+    "<p>このゲームは、宇宙人と資源の取り引きをします。その結果、得をしたり、損をしたりします。ただし、こちらはシビアな宇宙群のため、プラスマイナス０の取引か損失する取引だけになります。</p>",
     `<p>各惑星には2人の宇宙人がいます。例えば:</p><p><b><font color='${practice_info.font_colors[2]}'>${practice_info.planet_names[0]}</font></b>色の宇宙人がいるのは、惑星<b><font color='${practice_info.font_colors[2]}'>${practice_info.planet_names[0]}</font></b>で、</p><p><b><font color='${practice_info.font_colors[3]}'>${practice_info.planet_names[1]}</font></b>色の宇宙人がいるのは、惑星<b><font color='${practice_info.font_colors[3]}'>${practice_info.planet_names[1]}</font></b>です。</p>`,
     "<p>惑星を訪れて、取引する宇宙人を選びます。</p><p>宇宙人と取引すると、その結果、<b>我々の協力者の通訳である感情表現の豊かな「ワープさん」が</b><b>取引結果に応じた表情を見せます。</b></p>",
     "<p>通訳の「ワープさん」は資源取引で、</p><p>損をすると「ぷんぷん顔」になります。</p><p>損失の表情はこちらです。</p>",

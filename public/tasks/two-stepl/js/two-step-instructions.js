@@ -235,8 +235,8 @@ const instructions_loop_1b = {
 const instructions_2a = {
   type: jsPsychTwoStepInstructions,
   pages: [
-    "<p>次に、惑星へのめぐり方を体験します。取引全体の前半と後半の２段階の選択のうち、さきほどの宇宙人との取引は後半部分でした。</p>",
-    `<p>ここでは、前半部分の選択である、惑星を訪問するロケットを、まず選ぶ練習です。</p><p>以下に、ロケットの例を2つ示します:<br>the <b><font color='${practice_info.font_colors[0]}'>${practice_info.rocket_names[0]}</font></b> and <b><font color='${practice_info.font_colors[1]}'>${practice_info.rocket_names[1]}</font></b> rocket ships.</p>`,
+    "<p>次に、惑星への訪問を体験します。取引全体の前半と後半の２段階の選択のうち、さきほどの宇宙人との取引は後半部分でした。</p>",
+    `<p>ここからは、前半部分の選択である、惑星を訪問するロケット選びも含めた、通しの練習です。</p><p>以下に、ロケットの例を2つ示します:<br>the <b><font color='${practice_info.font_colors[0]}'>${practice_info.rocket_names[0]}</font></b> and <b><font color='${practice_info.font_colors[1]}'>${practice_info.rocket_names[1]}</font></b> rocket ships.</p>`,
     `<p>各ロケットは「たいてい」は、到着する惑星がきまっています。</p><p>このロケットならば、あの宇宙人と出会える、と「たいてい」わかっているのです。</p><p></p>`,
     "<p>もし特定の惑星で、特定の宇宙人と出会いたいなら, そこへ連れていって<br>くれる可能性が最も高い色のロケット船を選ぶ必要があります。</p>",
     "<p>訪問するロケットを選択するには、キーボードの</p><p><b>矢印の左←か右→の方向キーを</b>使用します。</p>",

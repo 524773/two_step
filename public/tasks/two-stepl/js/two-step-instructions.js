@@ -235,7 +235,7 @@ const instructions_loop_1b = {
 const instructions_2a = {
   type: jsPsychTwoStepInstructions,
   pages: [
-    "<p>次に、搭乗するロケット選びです。宇宙人と取引するためには２段階の選択（１）訪問するロケットを選ぶ。（２）取引する宇宙人を選ぶ。が必要です。★　さきほどの宇宙人との取引は、（２）の部分でした。</p>",
+    "<p>次に、搭乗するロケット選びです。宇宙人と取引するためには２段階の選択 :（１）訪問するロケットを選ぶ。（２）取引する宇宙人を選ぶ。が必要です。★　さきほどの宇宙人との取引は、（２）の部分でした。</p>",
     `<p>今度は、（１）の、訪問するロケット選びです。</p><p>以下に、ロケットの例を2つ示します:<br>the <b><font color='${practice_info.font_colors[0]}'>${practice_info.rocket_names[0]}</font></b> and <b><font color='${practice_info.font_colors[1]}'>${practice_info.rocket_names[1]}</font></b> rocket ships.</p>`,
     `<p>各ロケットは「たいてい」は、到着する惑星がきまっています。</p><p>このロケットならば、あの宇宙人と出会える、と「たいてい」わかっているのです。</p><p></p>`,
     "<p>もし特定の惑星で、特定の宇宙人と出会いたいなら, そこへ連れていって<br>くれる可能性が最も高い色のロケットを選ぶ必要があります。</p>",

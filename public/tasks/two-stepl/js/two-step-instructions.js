@@ -177,7 +177,7 @@ const practice_1_node = {
     const n_trial = jsPsych.data.get().filter({trial_type: 'alien-practice'}).count() % 10;
 
     // If last three trials correct & trial number >=5, end.
-    if ( practice_1_counter >= 3 && n_trial >= 5 ) {
+    if ( practice_1_counter <= 4 && n_trial >= 5 ) {
       return false;
     } else {
       return true;
@@ -198,7 +198,7 @@ const practice_1_help_node = {
     button_label_next: "Next",
   }],
   conditional_function: function() {
-    if ( practice_1_counter >= 3 ) {
+    if ( practice_1_counter <= 4 ) {
       return false;
     } else {
       return true;
@@ -214,7 +214,7 @@ const instructions_loop_1b = {
     practice_1_node, practice_1_node, practice_1_node, practice_1_help_node
   ],
   loop_function: function(data) {
-    if ( practice_1_counter >= 3 ) {
+    if ( practice_1_counter <= 4 ) {
       return false;
     } else {
       return true;

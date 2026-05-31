@@ -23,7 +23,7 @@ const instructions_1a = {
   pages: [
     "<p>このゲームは、宇宙人と資源の取引をします。取引は普通、得をしたり、損をしますが、こちらは「きびしい宇宙群」のため、プラスマイナス０の取引か損する取引だけになります。</p>",
     `<p>各惑星には2人の宇宙人がいます。例えば:</p><p><b><font color='${practice_info.font_colors[2]}'>${practice_info.planet_names[0]}</font></b>色の宇宙人がいるのは、惑星<b><font color='${practice_info.font_colors[2]}'>${practice_info.planet_names[0]}</font></b>で、</p><p><b><font color='${practice_info.font_colors[3]}'>${practice_info.planet_names[1]}</font></b>色の宇宙人がいるのは、惑星<b><font color='${practice_info.font_colors[3]}'>${practice_info.planet_names[1]}</font></b>です。</p>`,
-    "<p>惑星を訪問したら、取引する宇宙人を選びます。</p><p>宇宙人と取引すると<b>我々の協力者で、通訳である感情表現の豊かな「ワープさん」が</b><b>取引結果に応じた表情を見せます。</b></p>",
+    "<p>惑星を訪問したら、取引する宇宙人を選びます。</p><p>宇宙人と取引すると<b>我々の協力者で、感情表現の豊かな通訳の「ワープさん」が</b><b>取引結果に応じた表情を見せます。</b></p>",
     "<p>通訳の「ワープさん」は、</p><p>あなたが取引で損をすると「ぷんぷん顔」になります。</p><p>表情はこちらです。（画像は練習用です）</p>",
     "<p>プラスマイナス０の取引結果になれば</p><p>現状維持なので、「真顔」になります。</p><p>真顔はこちらです。（画像は練習用です）</p>",
     "<p>取引する宇宙人を選ぶには、キーボードの</p><p><b>左←か右→の矢印</b>キーを使います。</p>",
@@ -54,7 +54,7 @@ const quiz_1 = {
   type: jsPsychTwoStepComprehension,
   prompts: [
     "取引する宇宙人を選択するには、どのキーを使用しますか?",
-    "<i>True</i> or <i>False</i>:&nbsp;あなたの目標は、どの宇宙人があなたにとって悪条件の取引（－１０円）をする時期か判断し、回避することです。",
+    "<i>True</i> or <i>False</i>:&nbsp;あなたの目標は、どの宇宙人が、あなたにとって悪条件の取引（－１０円）をする時期か判断し、回避することです。",
     "<i>True</i> or <i>False</i>:&nbsp;ある宇宙人は、ある時期において、ほかの宇宙人よりもあなたにとって悪条件の取引（－１０円）を頻繁にします。",
   ],
   options: [
@@ -444,8 +444,8 @@ const instructions_3a = {
 const quiz_3 = {
   type: jsPsychTwoStepComprehension,
   prompts: [
-    "<i>True</i> or <i>False</i>:&nbsp;&nbsp;宇宙人が「悪条件の取引」をする確率は、時間の経過とともに変化する。",
-    "<i>True</i> or <i>False</i>:&nbsp;&nbsp;宇宙人が「悪条件の取引」をする確率は、選択したロケットによって異なる。",
+    "<i>True</i> or <i>False</i>:&nbsp;&nbsp;宇宙人が、あなたにとって「悪条件の取引」をする確率は、時間の経過とともに変化する。",
+    "<i>True</i> or <i>False</i>:&nbsp;&nbsp;宇宙人が、あなたにとって「悪条件の取引」をする確率は、選択したロケットによって異なる。",
     "<i>True</i> or <i>False</i>:&nbsp;&nbsp;このゲーム内で変動した「お金」が、プラスの場合もマイナスの場合も、精算されて実際の謝礼金に影響する。",
   ],
   options: [

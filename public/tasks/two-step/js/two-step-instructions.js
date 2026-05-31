@@ -23,7 +23,7 @@ const instructions_1a = {
   pages: [
     "<p>このゲームは、宇宙人と資源の取引をします。取引は普通、得をしたり、損をしますが、こちらは「やさしい宇宙群」のため、プラスマイナス０の取引か得する取引だけになります。</p>",
     `<p>各惑星には2人の宇宙人がいます。例えば:</p><p><b><font color='${practice_info.font_colors[2]}'>${practice_info.planet_names[0]}</font></b>色の宇宙人がいるのは、惑星<b><font color='${practice_info.font_colors[2]}'>${practice_info.planet_names[0]}</font></b>で、</p><p><b><font color='${practice_info.font_colors[3]}'>${practice_info.planet_names[1]}</font></b>色の宇宙人がいるのは、惑星<b><font color='${practice_info.font_colors[3]}'>${practice_info.planet_names[1]}</font></b>です。</p>`,
-    "<p>惑星を訪問したら、取引する宇宙人を選びます。</p><p>宇宙人と取引すると<b>我々の協力者で、通訳である感情表現の豊かな「ワープさん」が</b><b>取引結果に応じた表情を見せます。</b></p>",
+    "<p>惑星を訪問したら、取引する宇宙人を選びます。</p><p>宇宙人と取引すると<b>我々の協力者で、感情表現の豊かな通訳の「ワープさん」が</b><b>取引結果に応じた表情を見せます。</b></p>",
     "<p>通訳の「ワープさん」は、</p><p>あなたが取引で得をすると「にこにこ顔」になります。</p><p>表情はこちらです。（画像は練習用です）</p>",
     "<p>プラスマイナス０の取引結果になれば</p><p>現状維持なので、「真顔」になります。</p><p>真顔はこちらです。（画像は練習用です）</p>",
     "<p>取引する宇宙人を選ぶには、キーボードの</p><p><b>左←か右→の矢印</b>キーを使います。</p>",
